@@ -1,15 +1,6 @@
+## Vintage Table Automation for Risk Analysis
 
-# Data Science Projects
-
-Welcome to my Data Science Projects repository 😃!
-## Introduction
-
-This collection showcases a variety of projects that demonstrate my skills in data analysis, machine learning, data visualization, and more. As a student deeply interested in data science, I have worked on several projects to apply my knowledge and learn new techniques. Each project includes code, data (if permissible), and a detailed explanation of the approach taken. The goal of this repository is to provide a comprehensive look at my work and serve as a reference for anyone interested in data science.
-
-
-## 1 - Vintage Table Automation for Risk Analysis
-
-### 1.1 - Description
+### Description
 
 The **Vintage Table Automation for Risk Analysis** project is designed to streamline the process of creating vintage tables for monthly risk analysis reports. Developed during my internship at Access Bank Azerbaijan, this project leverages the power of Python to automate routine data processing tasks, significantly reducing the time required to analyze large datasets.
 
@@ -23,7 +14,7 @@ This project features:
 
 By automating the creation of vintage tables, this project enhances efficiency and accuracy in risk management reporting, providing a valuable tool for financial analysts and risk management professionals.
 
-### 1.2 - Technologies Used
+### Technologies Used
 
 **Python**: The primary programming language for the project.
 
