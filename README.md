@@ -28,3 +28,6 @@ Contributions are welcome! If you have any ideas for improvements or new feature
 
 - [@Ahmad-Mukhtarov](https://www.github.com/Ahmad-Mukhtarov)
 
+## License
+
+This project is licensed under the MIT License. You are free to use, modify, and distribute this software as per the terms of the MIT License.
