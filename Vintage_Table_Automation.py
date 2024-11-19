@@ -21,12 +21,12 @@ def calculate_percentage(excel_file):
     for idx, last_sheet_name in enumerate(sheet_data.keys()):
         last_sheet_data = sheet_data[last_sheet_name]
 
-        # Step 1: Calculate the sum of "Disbursed amount in AZN" for the current last sheet
+        # Calculate the sum of "Disbursed amount" for the current last sheet
         sum_disbursed_amount = last_sheet_data['Disbursed amount'].sum()
 
         percentages = []
 
-        # Step 2 and 3: Calculate percentages using vectorized calculations
+        # Calculate percentages using vectorized calculations
         for sheet_name in list(sheet_data.keys())[:idx + 1]:
             sheet = sheet_data[sheet_name]
             sum_outstanding_overdue = sheet.loc[
@@ -41,14 +41,14 @@ def calculate_percentage(excel_file):
         percentages.reverse()
         percentages_all_sheets.append(percentages)
 
-    # Create a DataFrame using the calculated percentages
+    
     df = pd.DataFrame(percentages_all_sheets, columns=[f"{i}" for i in range(1, len(sheet_data) + 1)])
     df.index = sheet_data.keys()
 
     # Reverse the order of rows in the DataFrame
     df = df.iloc[::-1]
 
-    # Write the DataFrame to a new Excel file with styles
+    # Create new Excel file with styles
     output_excel_file = 'Final_Vintage.xlsx'
     writer = pd.ExcelWriter(output_excel_file, engine='openpyxl')
     writer.book = Workbook()
@@ -93,7 +93,7 @@ def calculate_percentage(excel_file, product_name):
     for idx, last_sheet_name in enumerate(sheet_data.keys()):
         last_sheet_data = sheet_data[last_sheet_name]
 
-        # Step 1: Calculate the sum of "Disbursed amount" for the current last sheet
+        # Calculate the sum of "Disbursed amount" for the current last sheet
         sum_disbursed_amount = last_sheet_data.loc[
             last_sheet_data['Product'] == product_name, 
             'Disbursed amount'
@@ -101,7 +101,7 @@ def calculate_percentage(excel_file, product_name):
 
         percentages = []
 
-        # Step 2 and 3: Calculate percentages using vectorized calculations
+        # Calculate percentages using vectorized calculations
         for sheet_name in list(sheet_data.keys())[:idx + 1]:
             sheet = sheet_data[sheet_name]
 
@@ -118,14 +118,14 @@ def calculate_percentage(excel_file, product_name):
         percentages.reverse()
         percentages_all_sheets.append(percentages)
 
-    # Create a DataFrame using the calculated percentages
+
     df = pd.DataFrame(percentages_all_sheets, columns=[f"{i}" for i in range(1, len(sheet_data) + 1)])
     df.index = sheet_data.keys()
 
     # Reverse the order of rows in the DataFrame
     df = df.iloc[::-1]
 
-    # Write the DataFrame to a new Excel file with styles
+    # Create new Excel file with styles
     output_excel_file = 'Final_Vintage_Product.xlsx'
     writer = pd.ExcelWriter(output_excel_file, engine='openpyxl')
     writer.book = Workbook()
